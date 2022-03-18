@@ -1,0 +1,48 @@
+.footer {
+    padding: 2.75rem 0 2.9rem 0;
+  }
+  .footer__navbar {
+    margin-right: 1.5rem;
+    margin-bottom: 4.5rem;
+  }
+  
+  .footer__info {
+    justify-content: space-between;
+    align-items: center;
+    font-style: normal;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2.5rem;
+    row-gap: 1rem;
+  }
+  
+  .footer__icon {
+    font-size: 30px;
+    color: #000;
+    transition: 0.5s ease-out;
+  }
+  .footer__icon:hover {
+    color: #fdbf0f;
+  }
+  .copy {
+    display: flex;
+  }
+  .copy__icon {
+    font-size: 1rem;
+    margin: 0 0.7rem 0 0;
+  }
+  .copy__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 143%;
+  }
+  
+  .navigation__logo--footer {
+    font-size: 1.8rem;
+    line-height: 117%;
+    margin-top: 0;
+  }
+  
+  .navigation__list--footer {
+    align-items: flex-start;
+  }

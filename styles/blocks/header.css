@@ -1,0 +1,261 @@
+/* header */
+
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50;
+}
+.header__wrapper {
+  min-height: 7.5rem;
+}
+
+.header__info {
+  font-style: normal;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  column-gap: 3.6rem;
+}
+
+.header__btn {
+  display: flex;
+}
+
+.info {
+  font-style: normal;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  column-gap: 3.6rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.navigation__logo {
+  display: block;
+  font-weight: bold;
+  font-size: 2.4rem;
+  margin: 0.7rem 2rem 0 0;
+  transition: 0.5s ease-in;
+}
+.navigation__logo {
+  margin: 1.1rem 2rem 0 0;
+  font-size: 2rem;
+}
+
+.navigation__list {
+  min-height: 3.4rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  column-gap: 1.5rem;
+}
+
+.navigation__item {
+  list-style: none;
+  padding: 5px 0;
+  position: relative;
+  transition: 0.5s ease-out;
+  display: block;
+}
+.navigation__item:hover {
+  color: #ff8c00;
+}
+.navigation__item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background-color: #ff8c00;
+  transition: 0.5s ease-out;
+  border-radius: 1px;
+}
+.navigation__item:hover::after {
+  left: 0;
+  right: 0;
+}
+.navigation__link {
+  transition: 0.5s ease-out;
+}
+.navigation__link:hover {
+  color: #ff8c00;
+}
+
+.adress {
+  display: flex;
+  transition: 0.5s ease-in;
+}
+.adress__icon {
+  font-size: 1.2rem;
+  margin: -0.2rem 0.55rem 0 0;
+}
+.adress__link {
+  font-size: 14px;
+  line-height: 142%;
+  transition: 0.5s ease-out;
+}
+.adress__link:hover {
+  color: #651fff;
+}
+
+.contact-info {
+  min-width: 12rem;
+}
+.contact-info > *:not(:last-child) {
+  margin: 0 0 6px 0;
+}
+.contact-info__phone {
+  display: flex;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 117%;
+  transition: 0.5s ease-in;
+}
+.contact-info__icon {
+  margin: 0.15rem 0.3rem 0 0;
+}
+.contact-info__email {
+  font-size: 14px;
+  line-height: 114%;
+  margin: 0 0 0 2rem;
+  transition: 0.5s ease-in;
+}
+
+
+
+/* burger-menu */
+
+.menu__toggle {
+  opacity: 0;
+  position: absolute;
+}
+
+.menu__toggle:checked + label:before,
+.menu__toggle:not(:checked) + label:before,
+.menu__toggle:checked + label:after,
+.menu__toggle:not(:checked) + label:after {
+  opacity: 0;
+  position: absolute;
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  right: 40px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+#menu__toggle:checked + label,
+#menu__toggle:not(:checked) + label {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+@media (max-width: 1143px) {
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+  }
+  .menu__btn > span::before {
+    content: "";
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: "";
+    top: 8px;
+  }
+
+  /* контейнер меню */
+  .navigation__list-header {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #eceff1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+  }
+  /* элементы меню */
+  .navigation__link-header {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .navigation__link-header + .navigation__link-header 
+  {
+    margin: 0;
+  }
+  .navigation__link-header:hover
+   {
+    background-color: #cfd8dc;
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .navigation__list-header {
+    visibility: visible;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    transition-duration: 0.25s;
+  }
+  .navigation__list-header {
+    transition-duration: 0.25s;
+  }
+  .navigation__link-header {
+    transition-duration: 0.25s;
+  }  
+}
